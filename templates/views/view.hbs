@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {{>headlink}}
+     
+</head>
+<body>
+  <div class="view">
+  {{>nav}}
+  <div class="header-view">
+    <div class="text-view">Bank Management System</div>
+  </div>
+<div class="view-below">
+  <div class="view-btn"><a href="/form"><button>Add User</button></a></div>
+<div class="table">
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Balance</th>
+        <th>Transfer</th>
+      </tr>
+    </thead>
+    {{#users}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{email}}</td>
+      <td>{{balance}}</td>
+      <td><a class="viewa" href="/home/transfermoney/transaction?id={{id}}"><button class="Transfer">Transfer</button></a></td>
+    </tr>
+    {{/users}}
+  </table>
+</div>
+</div>
+   </div>
+</body>
+</html>

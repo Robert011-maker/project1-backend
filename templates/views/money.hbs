@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {{>headlink}}
+</head>
+<body>
+    <div class="money-main">
+        <div class="money-upper"></div>
+        <div class="money-link">
+            <a href="/home">&laquo;Home</a>
+        </div>
+        <div class="money-header"><h1>Transfer</h1></div>
+        <div class="money-section">
+            <div class="money-send">
+                <h3 id="1">Transfer-From:</h3>
+                <input id="4" type="email" name="email" required placeholder="Enter mail">
+               
+            </div>
+            <div class="money-receiver">
+                <label for="to">Transfer-To:</label>
+                <select name="sender">
+                    {{#users}}
+                    <option value="{{id}}">{{ name}}  (Balance:{{ balance }})</option>
+                    {{/users}}
+                </select>
+                <div class="no1">
+                    <h3>Amount</h3>
+                <input class="no" type="number" required></div>
+            </div>
+            <div class="money-click"><a class="hhel" href="/home/transfermoney/VieallCustomers">Send</a></div>
+        </div>
+
+    </div>
+    <script>
+let show= document.querySelector('.hhel');
+console.log(show);
+
+show.addEventListener('click',()=>{
+    let l=document.querySelector('.no')
+    alert(`Amount ${l.value} transferred`);
+})
+
+
+    </script>
+</body>
+</html>

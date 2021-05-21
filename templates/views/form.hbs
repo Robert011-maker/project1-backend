@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>headlink}}
+</head>
+<body>
+  
+    
+    <div class="hell">
+        <div class="h">
+        <h1>Add User</h1></div>
+    <div class="form">
+       
+        <form  action="/api/users" method="POST" class="form1">
+        <div class="name">
+     
+        <input class="txt" type='text' name="name" required>
+           <label for='username'>Name</label>
+           </div>
+        <div class="mail">
+ 
+        <input type="email" name="email" required>
+               <label for="email">Email</label></div>
+        <div class="num">
+            
+            <input type="number" name="balance" required>
+            <label for="number">Balance</label>
+        </div>
+      
+        <input class="sub" type="submit" value='Submit'>
+        <input class="reset" type="Reset" value='Reset'>
+         <div class="back">
+            <a href="/home">&laquo; Back</a>
+        </div>
+        </form>
+    </div>
+    </div>
+   
+</body>
+</html>

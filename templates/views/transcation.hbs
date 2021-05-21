@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {{>headlink}}
+</head>
+<body>
+  <div class="trn-main">
+  {{>nav}}
+  <div class="trn-header">
+    <div class="trn-text">Money Transfer</div>
+  </div>
+  <div class="trn-data">
+    <div class="trn-table">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Balance</th>
+          </tr>
+          <tr>
+            
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.balance }}</td>
+            
+          </tr>
+      </table>
+    </div>
+    <div class="trn-to">
+              <label for="transfer-to">Transfer-To:</label>
+      <select name="transfer">
+        {{#users}}
+        <option value="{{ id }}">{{ name }} ({{ balance }})</option>
+        {{/users}}
+      </select>
+    </div>
+    
+    <div class="ammount">
+      <label for="ammount">Enter Amount:</label>
+      <input class="money" type="number" name="number" required autocomplete="off">
+      </div>
+      <div class="trn-link1"><a href="/home/transfermoney/VieallCustomers"><button class="bb">Send</button></a></div>
+  </div>
+  </div>
+</body>
+<script>
+  let display=document.querySelector('.bb');
+  
+  let input=document.querySelector('input');
+  
+  display.addEventListener('click',()=>{
+   let txt=input.value;
+   if(txt==0){
+let pro=prompt('Enter Amount');
+console.log(pro);
+if(pro!=null){
+ alert(`Amount ${pro} successfully`);
+}
+
+
+else{
+  window.location.href="/home/transfermoney/transaction";
+}
+   }
+   else{
+     alert(`Amount => ${txt}\n Successfully`);
+   }
+  })
+</script>
+</html>
